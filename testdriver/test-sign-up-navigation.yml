@@ -1,0 +1,19 @@
+version: 4.2.12
+session: 67b82c76b96c69d174ae18c8
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Click on the "Don't have an account?" link.
+    commands:
+      - command: hover-text
+        text: Don't have an account?
+        description: link to sign up page below the login button
+        action: click
+  - prompt: >-
+      Assert that the user is redirected to the sign-up page.  # Use the content
+      of the file from the environment
+    commands:
+      - command: assert
+        expect: the "Register form" is visible on the page
