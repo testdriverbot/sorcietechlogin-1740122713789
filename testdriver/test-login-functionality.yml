@@ -1,0 +1,29 @@
+version: 4.2.12
+session: 67b82c6f62db8e81d69e711a
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Fill in the Username field with a valid email.
+    commands:
+      - command: hover-text
+        text: Username
+        description: label for the username input field
+        action: click
+      - command: type
+        text: test@example.com
+  - prompt: Fill in the Password field with a correct password.
+    commands:
+      - command: hover-text
+        text: Password
+        description: label for the password input field
+        action: click
+      - command: type
+        text: correctpassword123
+  - prompt: Click the "Log In" button.
+    commands:
+      - command: hover-text
+        text: Log In
+        description: button to submit login form
+        action: click
