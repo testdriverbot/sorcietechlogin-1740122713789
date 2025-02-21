@@ -1,0 +1,35 @@
+version: 4.2.12
+session: 67b82c68b96c69d174ae18c2
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Fill in the Username field with an invalid email.
+    commands:
+      - command: hover-text
+        text: Username
+        description: label for the username input field
+        action: click
+      - command: type
+        text: invalid-email
+  - prompt: Fill in the Password field with an incorrect password.
+    commands:
+      - command: hover-text
+        text: Password
+        description: label for the password input field
+        action: click
+      - command: type
+        text: wrong-password
+  - prompt: Click the "Log In" button.
+    commands:
+      - command: hover-text
+        text: Log In
+        description: button to submit login credentials
+        action: click
+  - prompt: >-
+      Assert that an error message is displayed.  # Use the content of the file
+      from the environment
+    commands:
+      - command: assert
+        expect: Invalid email format is displayed
